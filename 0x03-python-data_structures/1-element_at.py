@@ -2,7 +2,7 @@
 def element_at(my_list, idx):
     if idx < 0:
         return None
-    for i, element in enumerate(my_list):
+    for i, item in enumerate(my_list):
         if i == idx:
-            return element
+            return item
     return None
