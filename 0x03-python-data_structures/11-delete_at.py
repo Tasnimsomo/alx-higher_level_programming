@@ -6,4 +6,4 @@ def delete_at(my_list=[], idx=0):
         for i, element in enumerate(my_list):
             if idx == i:
                 my_list.remove(element)
-        return my_list11-delete_at.py
+        return my_list
