@@ -6,7 +6,8 @@ Write a function that writes a string to a text file (UTF8)
 
 def write_file(filename="", text=""):
     """
-    Write the specified text to a file (UTF8) and return the number of characters written.
+    Write the specified text to a file (UTF8) and
+    return the number of characters written.
 
     Parameters:
     - filename (str): The name or path of the file to be written.
@@ -17,4 +18,3 @@ def write_file(filename="", text=""):
     """
     with open(filename, mode="w", encoding="utf-8") as f:
         return f.write(text)
-        
