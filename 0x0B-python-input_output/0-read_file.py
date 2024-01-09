@@ -9,7 +9,7 @@ def read_file(filename=""):
     Read the content of a file and print it to the console.
 
     Parameters:
-    - filename (str): The name or path of the file to be read. Defaults to an empty string.
+    - filename (str): The name or path of the file to be read.
 
     Returns:
     None
