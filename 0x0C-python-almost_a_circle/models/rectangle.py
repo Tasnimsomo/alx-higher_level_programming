@@ -70,7 +70,7 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("x must be >= 0")
         self.__x = value
-        
+
     @property
     def y(self):
         return self.__y
