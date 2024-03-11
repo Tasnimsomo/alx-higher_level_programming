@@ -6,5 +6,5 @@ if (args.length === 2) {
 } else if (args.length === 3) {
   console.log('Argument found');
 } else {
-  console.log('arguments found');
+  console.log('Arguments found');
 }
