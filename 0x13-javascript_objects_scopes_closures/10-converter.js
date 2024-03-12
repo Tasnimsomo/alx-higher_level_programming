@@ -1,3 +1,4 @@
+#!/usr/bin/node
 exports.converter = function (base) {
   return function convertToBase (n) {
     if (n < base) {
