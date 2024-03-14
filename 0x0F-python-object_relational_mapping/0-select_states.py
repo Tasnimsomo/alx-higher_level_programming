@@ -17,7 +17,7 @@ if __name__ == '__main__':
 
     cursor = connection.cursor()
 
-    cursor.execute("SELECT * FROM states ORDER BY states.id ASC")
+    cursor.execute("SELECT * FROM states ORDER BY states.id ASC LIMIT 5")
 
     rows_selected = cursor.fetchall()
 
