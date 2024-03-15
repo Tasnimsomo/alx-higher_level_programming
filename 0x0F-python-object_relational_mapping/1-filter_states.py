@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import MySQLdb
 from sys import argv
 
@@ -6,7 +7,7 @@ Access to the database and get the states
 from the database.
 """
 
-if name == 'main':
+if __name__ == '__main__':
     connection = MySQLdb.connect(
             host="localhost",
             port=3306,
