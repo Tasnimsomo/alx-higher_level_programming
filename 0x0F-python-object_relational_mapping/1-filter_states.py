@@ -11,7 +11,9 @@ if __name__ == "__main__":
             port=3306
             )
     cursor = connection.cursor()
-    cursor.execute("SELECT DISTINCT * from states WHERE name LIKE 'N%' ORDER BY states.id ASC LIMIT 2")
+    cursor.execute(
+            "SELECT * from states WHERE name LIKE BINARY 'N%' \
+                    ORDER BY states.id ASC")
     results = cursor.fetchall()
     for x in results:
         print(x)
