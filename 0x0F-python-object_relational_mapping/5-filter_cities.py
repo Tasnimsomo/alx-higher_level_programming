@@ -16,11 +16,11 @@ if __name__ == "__main__":
             database=argv[3])
     cursor = connection.cursor()
     state_name = argv[4]
-    query = "SELECT cities.id, cities.name FROM cities \
+    query = "SELECT cities.name FROM cities \
             JOIN states ON cities.state_id = states.id \
             WHERE states.name = %s \
             ORDER BY cities.id ASC"
     cursor.execute(query, (state_name,))
     results = cursor.fetchall()
-    for x in results:
-        print(x)
+    cities_list = ', '.join(city[0] for city in results)
+    print(cities_list)
