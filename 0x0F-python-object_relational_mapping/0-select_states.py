@@ -12,8 +12,8 @@ if __name__ == '__main__':
     Access to the database and get the states
     from the database.
     """
-    connection = MySQLdb.connect(
-            host="localhost", user=argv[1], port=3306, passwd=argv[2], db=argv[3])
+    db_connect = MySQLdb.connect(
+        host="localhost", user=argv[1], port=3306, passwd=argv[2], db=argv[3])
 
     cursor = connection.cursor()
 
