@@ -18,7 +18,6 @@ if __name__ == '__main__':
             port=3306,
             password=argv[2],
             database=argv[3])
-    
     cursor = connection.cursor()
 
     cursor.execute("SELECT * FROM states ORDER BY states.id ASC")
