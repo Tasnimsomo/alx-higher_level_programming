@@ -16,8 +16,11 @@ if __name__ == "__main__":
             database=argv[3])
     cursor = connection.cursor()
     state_name = argv[4]
-    query = "SELECT * FROM cities WHERE state = %s ORDER BY id ASC"
-    cursor.execute(query, (state_name,))
+    query = "SELECT cities.id, cities.name FROM cities \
+            JOIN states ON cities.states_id = states.id \
+            WHERE states.name LIKE BINARY %(state_names)s\
+            ORDER BY cities.id ASC")
+    cursor.execute(query, {'state_name': argv[4]})
     results = cursor.fetchall()
     for x in results:
         print(x)
