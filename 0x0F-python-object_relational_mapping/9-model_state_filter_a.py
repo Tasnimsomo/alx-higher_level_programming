@@ -18,7 +18,6 @@ if __name__ == "__main__":
 
         Use the session to query the State objects.
         You can order the results by states.id using the order_by function.
-
     """
     engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
         sys.argv[1], sys.argv[2], sys.argv[3]))
@@ -26,6 +25,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    results = session.query(State).order_by(State.id)
+    results = session.query(State).filter(
+            State.name.like('%a%')).order_by(State.id)
     for state in results:
         print("{}: {}".format(state.id, state.name))
