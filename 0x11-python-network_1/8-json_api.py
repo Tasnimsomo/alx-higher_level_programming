@@ -15,7 +15,7 @@ if __name__ == "__main__":
         else:
             q = sys.argv[1]
 
-        response = requests.post(url, params={'q': q})
+        response = requests.post(url, data={'q': q})
         decoded_data = response.json()
         if decoded_data:
             print("[{}] {}".format(decoded_data['id'], decoded_data['name']))
