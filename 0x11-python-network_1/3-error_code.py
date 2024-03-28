@@ -1,17 +1,18 @@
 #!/usr/bin/python3
-"""3. Error code #0"""
+"""
+takes in a URL, sends a request to the URL and displays
+the body of the response (decoded in utf-8).
+"""
 
-import urllib.request
-import urllib.error
 import sys
+from urllib import request, error
 
 if __name__ == "__main__":
     url = sys.argv[1]
-    try:
-        with urllib.request.urlopen(url) as response:
-            response = response.read()
-            decoded_data = response.decode("utf-8")
-            print(decoded_data)
 
-    except urllib.error.HTTPError as e:
-        print("Error code: ", e.code)
+    own_request = request.Request(url)
+    try:
+        with request.urlopen(own_request) as response:
+            print(response.read().decode("ascii"))
+    except error.HTTPError as e:
+        print("Error code: {}".format(e.code))
