@@ -4,7 +4,8 @@
 import requests
 import sys
 """
-Python script that takes in a letter and sends a POST request to http://0.0.0.0:5000/search_user with the letter as a parameter
+Python script that takes in a letter and sends a POST request to
+http://0.0.0.0:5000/search_user with the letter as a parameter
 """
 if __name__ == "__main__":
     try:
@@ -14,11 +15,11 @@ if __name__ == "__main__":
         else:
             q = sys.argv[1]
 
-        response = requests.post(url, data = {'q': q})
+        response = requests.post(url, data={'q': q})
         decoded_data = response.json()
         if decoded_data:
             print("[{}] {}".format(decoded_data['id'], decoded_data['name']))
         else:
-             print("No result")
+            print("No result")
     except requests.JSONDecodeError as e:
         print('Not a valid JSON', str(e))

@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""3. Error code #0"""
 
 import urllib.request
 import urllib.error
