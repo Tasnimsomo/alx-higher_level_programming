@@ -3,12 +3,18 @@
 const request = require('request');
 const baseUrl = 'https://swapi-api.alx-tools.com/api/films/';
 const characterId = 18;
-const url = baseUrl + '?search=' + characterId;
 
-request.get(url, (error, response, body) => {
+request.get(baseUrl, (error, response, body) => {
   if (error) {
     console.error(error);
   }
-  const movie = JSON.parse(body);
-  console.log(movie.count);
+  const films = JSON.parse(body);
+  let counter = 0;
+  for (const film of films.results) {
+    if (film.characters.includes(`https://swapi-api.alx-tools.com/api/people/${characterId}/`)) {
+      counter++;
+    }
+  }
+
+  console.log(counter);
 });
