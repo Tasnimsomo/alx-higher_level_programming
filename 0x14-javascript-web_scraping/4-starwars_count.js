@@ -3,7 +3,7 @@
 const request = require('request');
 const baseUrl = 'https://swapi-api.alx-tools.com/api/films/';
 const characterId = 18;
-const url = baseUrl + '?characters=' + characterId;
+const url = baseUrl + '?search=' + characterId;
 
 request.get(url, (error, response, body) => {
   if (error) {
