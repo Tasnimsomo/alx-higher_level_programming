@@ -9,5 +9,5 @@ request(url, (error, response, body) => {
     console.error(error);
   }
   const movieTitle = JSON.parse(body);
-  console.log(movieTitle.films);
+  console.log(movieTitle.title);
 });
